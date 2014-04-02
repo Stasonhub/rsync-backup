@@ -1,0 +1,14 @@
+tmp
+logs
+log/*
+proc/* 
+cache/* 
+managed_cache/*
+var/lib/php/session/*
+var/cache/nginx
+var/cache/yum
+httpd-logs
+var/lib/nginx
+var/spool/postfix
+var/lib/mysql/*
+var/lib/pgsql/*
