@@ -30,7 +30,7 @@ usernames=backup
 useradd -g backups $usernames
 rm -f /home/$usernames/.bash*
 mkdir /home/$usernames/.ssh /home/$usernames/rsyncbackups
-chown -R $usernames:vzbackups /home/$usernames
+chown -R $usernames:backups /home/$usernames
 chown -R root:root /home/$usernames/.ssh
 touch /home/$usernames/.ssh/authorized_keys
 </pre></code>
