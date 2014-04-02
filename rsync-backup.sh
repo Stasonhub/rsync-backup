@@ -274,7 +274,7 @@ ALERT=${ALERT1}${ALERT11}${ALERT21}${ALERT22}
 if [ "$ALERT" != "" ]; then
   ALERT=$HN$'\n'${ALERT1}$'\n'${ALERT11}$'\n'$'\n'${ALERT21}$'\n'${ALERT22}$'\n'
   echo "$ALERT"
-  echo "$ALERT" | mail -s "$HN rsync-backup error alert" backup-alert@centos-admin.ru
+  echo "$ALERT" | mail -s "$HN rsync-backup error alert" root
 fi
 
 if [ "$POSTBACKUP" ]
