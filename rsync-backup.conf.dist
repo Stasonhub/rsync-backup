@@ -1,0 +1,45 @@
+#Default rsync backup config dir
+CONFIG_DIR="/opt"
+
+#How many increments should be saved
+
+DAILY=7
+WEEKLY=4
+MONTHLY=1
+
+# You can use VEIDS="$(cd /vz/private/ && echo *)" to backup all your VE's.
+VEIDS="$(cd /vz/private/ && echo *)"
+# You can exclude some VEIDS
+VEIDS_EXCLUDE=""
+
+# the path to the running VE's
+VZ_PRIVATE="/vz/private"
+
+# the local rsync cache / destination directory
+# use LOCAL_DIR="" to disable local backup
+LOCAL_DIR="/vz/rsyncbackups"
+
+# Exclude filelists 
+EXCLUDE="/srv/southbridge/etc/rsync-backup.exclude.dist"
+REMOTE_EXCLUDE="$CONFIG_DIR/etc/rsync-backup.exclude.remote"
+LOCAL_EXCLUDE="$CONFIG_DIR/etc/rsync-backup.exclude.local"
+REMOTE_INCLUDE="$CONFIG_DIR/etc/rsync-backup.include.remote"
+LOCAL_INCLUDE="$CONFIG_DIR/etc/rsync-backup.include.local"
+
+# Remote username
+USERNAME=`hostname | awk -F '.' '{print $2}'`
+
+# Remote host and path that this script will rsync the VE's to.
+# You can specify few hosts devided by space
+# for example: REMOTE_HOSTS="backups.centos-admin.ru backups.client.ru"
+# or REMOTE_HOSTS="" to disable remote backup
+REMOTE_HOSTS="backups.centos-admin.ru"
+
+# Checkpoint support
+CHKPNT_ENABLED="NO"
+
+# Command to run before backups (uncomment to use)
+#PREBACKUP="/etc/backup-pre"
+
+# Command run after backups (uncomment to use)
+#POSTBACKUP="/etc/backup-post"
