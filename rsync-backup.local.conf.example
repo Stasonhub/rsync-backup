@@ -1,0 +1,8 @@
+# Remote username
+USERNAME=`hostname | awk -F '.' '{print $2}'`
+
+# Remote host and path that this script will rsync the VE's to.
+# You can specify few hosts devided by space
+# for example: REMOTE_HOSTS="backups.centos-admin.ru.ru backups.client.ru"
+# or REMOTE_HOSTS="" to disable remote backup
+REMOTE_HOSTS="backups.example.com"
